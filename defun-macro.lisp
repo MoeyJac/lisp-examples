@@ -89,3 +89,14 @@
                 (,sym-to ,to))
             ((>= ,var ,sym-to) t)
             ,@body)))
+
+(defun fib (n)
+    (declare (optimize (debug 3) (speed 0)))
+    (break)
+    (if (<= n 1) n
+        (+  (fib (- n 1))
+            (fib (- n 2)))))
+
+(defun factorial (n)
+  (if (= n 0) 1 
+    (*  n (factorial (- n 1)))))
